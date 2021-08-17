@@ -1,0 +1,17 @@
+<script>
+  // Only change code below this line
+function countdown(n){
+  var arr = []
+  
+  if(n < 0) {
+    return []
+  } else {
+    arr.push(n)
+    countdown(n - 1)    
+  } 
+  return arr;
+}
+// Only change code above this line
+
+console.log(countdown(10))
+</script>
