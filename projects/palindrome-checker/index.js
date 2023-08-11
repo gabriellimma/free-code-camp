@@ -13,15 +13,23 @@
  * We'll also pass strings with special symbols, 
  * such as 2A3*3a2, 2A3 3a2, and 2_A3*3#A2.
  */
-
-
-
 function palindrome(str) {
-    let strRegex = /[a-z0-9]/ig;
-    let alphaNumericString = str.match(strRegex);
-    let reversedString = alphaNumericString.join('');
-    console.log(reversedString)
-    return true;
+    if(typeof str == 'string'){
+        let strRegex = /[a-z0-9]/ig;
+        let alphaNumericString = str.match(strRegex).join('');
+        let reversedString = alphaNumericString.split('').reverse().join('');
+        if(alphaNumericString.toLowerCase() === reversedString.toLowerCase()) {
+            console.log(`${alphaNumericString} is equal to \n${reversedString}`)
+            return true;
+        }
+    }
+    return false;
 }
-  
-palindrome("eye");
+
+module.exports = {
+    palindrome
+}
+//returns true
+// output 
+// Myageis00siegaym is equal to 
+// myageis00siegayM
